@@ -54,8 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				34642973290C5836002D7D14 /* TemperatureConverterApp.swift */,
-				34642975290C5836002D7D14 /* ContentView.swift */,
-				347385F02912EAE70090E75B /* TemperatureConverterViewModel.swift */,
+				347385F22912F0290090E75B /* Views */,
+				347385F32912F0480090E75B /* Model */,
 				34642977290C5837002D7D14 /* Assets.xcassets */,
 				34642979290C5837002D7D14 /* Preview Content */,
 			);
@@ -68,6 +68,22 @@
 				3464297A290C5837002D7D14 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		347385F22912F0290090E75B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34642975290C5836002D7D14 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		347385F32912F0480090E75B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				347385F02912EAE70090E75B /* TemperatureConverterViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
