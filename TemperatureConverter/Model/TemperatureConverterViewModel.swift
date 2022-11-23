@@ -10,20 +10,24 @@ import Foundation
 final class TemperatureConverterViewModel: ObservableObject {
     @Published var initialValue: Double = 0
     @Published var inputUnit = "Fahrenheit"
-    @Published var outputUnit = "Celsius"
+    @Published var outputUnitCelsius = "Celsius"
+    @Published var outputUnitKelvin = "Kelvin"
     
     let units = ["Celsius": UnitTemperature.celsius, "Fahrenheit": UnitTemperature.fahrenheit, "Kelvin": UnitTemperature.kelvin]
     
-    var result: Double {
+    var result: (celsius: Double, kelvin: Double) {
         guard
             let inputUnit = units[inputUnit],
-            let outputUnit = units[outputUnit]
-        else { return 0 }
+            let outputUnitCelsius = units[outputUnitCelsius],
+            let outputUnitKelvin = units[outputUnitKelvin]
+                
+        else { return (0.0, 0.0) }
         
         let input = Measurement(value: initialValue, unit: inputUnit)
-        let output = input.converted(to: outputUnit)
+        let outputCelsius = input.converted(to: outputUnitCelsius)
+        let outputKelvin = input.converted(to: outputUnitKelvin)
         
-        return output.value
+        return (outputCelsius.value, outputKelvin.value)
     }
     
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34233306292D5D5E00623C7F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34233305292D5D5E00623C7F /* DataModel.swift */; };
+		34233308292D5D7A00623C7F /* image.json in Resources */ = {isa = PBXBuildFile; fileRef = 34233307292D5D7A00623C7F /* image.json */; };
 		34642974290C5836002D7D14 /* TemperatureConverterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34642973290C5836002D7D14 /* TemperatureConverterApp.swift */; };
 		34642976290C5836002D7D14 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34642975290C5836002D7D14 /* ContentView.swift */; };
 		34642978290C5837002D7D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34642977290C5837002D7D14 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34233305292D5D5E00623C7F /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		34233307292D5D7A00623C7F /* image.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = image.json; sourceTree = "<group>"; };
 		34642970290C5836002D7D14 /* TemperatureConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemperatureConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34642973290C5836002D7D14 /* TemperatureConverterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureConverterApp.swift; sourceTree = "<group>"; };
 		34642975290C5836002D7D14 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				34642973290C5836002D7D14 /* TemperatureConverterApp.swift */,
+				34233307292D5D7A00623C7F /* image.json */,
 				347385F22912F0290090E75B /* Views */,
 				347385F32912F0480090E75B /* Model */,
 				34642977290C5837002D7D14 /* Assets.xcassets */,
@@ -81,6 +86,7 @@
 		347385F32912F0480090E75B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				34233305292D5D5E00623C7F /* DataModel.swift */,
 				347385F02912EAE70090E75B /* TemperatureConverterViewModel.swift */,
 			);
 			path = Model;
@@ -144,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34233308292D5D7A00623C7F /* image.json in Resources */,
 				3464297B290C5837002D7D14 /* Preview Assets.xcassets in Resources */,
 				34642978290C5837002D7D14 /* Assets.xcassets in Resources */,
 			);
@@ -157,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34642976290C5836002D7D14 /* ContentView.swift in Sources */,
+				34233306292D5D5E00623C7F /* DataModel.swift in Sources */,
 				34642974290C5836002D7D14 /* TemperatureConverterApp.swift in Sources */,
 				347385F12912EAE70090E75B /* TemperatureConverterViewModel.swift in Sources */,
 			);
@@ -295,8 +303,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,9 +311,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cesaribarra.TemperatureConversion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -326,8 +336,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +344,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cesaribarra.TemperatureConversion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
