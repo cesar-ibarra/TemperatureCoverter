@@ -8,78 +8,71 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = TemperatureConverterViewModel()
-    @State private var imageBackground : ImageBackground?
+    @State private var imageBackground: String = getRandomImageName()
+    @State private var celsius: Double = 0.0
+    
+    // Conversión de Celsius a Fahrenheit
+    var fahrenheit: Double {
+        (celsius * 9/5) + 32
+    }
+    
+    // Conversión de Celsius a Kelvin
+    var kelvin: Double {
+        celsius + 273.15
+    }
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                VStack {
-                    Spacer()
-                    
-                    VStack {
-                        ZStack {
-                            VStack(alignment: .center) {
-                                Text("\(viewModel.initialValue, specifier: "%.0f")˚")
-                                    .font(.system(size: 90, weight: .medium))
-                                Text("Fachrenheit")
-                            }
-                            .offset(x: -55)
-                            
-                                Slider(value: $viewModel.initialValue, in: 0...150, step: 1)
-                                    .rotationEffect(.degrees(-90))
-                                    .padding(.trailing, -260)
-                                    .frame(maxWidth: 90)
-                                    .accentColor(.white)
-                        } //: ZSTACK
-                                            
+        
+        VStack {
+            // MARK: - BANNER
+            AdMobBanner()
+                .frame(width: 320, height: 50)
+            
+            CircularSlider(value: $celsius)
+                .frame(width: 250, height: 250)
+                .padding(.top, 120)
+            
+            Spacer()
+            
+            HStack {
+                Spacer()
+                Section {
+                    VStack(alignment: .center) {
+                        Text("\(fahrenheit, specifier: "%.1f")˚")
+                            .font(.system(size: 45, weight: .medium))
+                        
+                        Text("Fahrenheit")
+                        
                     } //: VSTACK
-                    .offset(y: -75)
-                    Spacer()
-                    
-                    
-                    HStack {
-                        Spacer()
-                        Section {
-                            VStack(alignment: .center) {
-                                Text("\(viewModel.result.celsius, specifier: "%.0f")˚")
-                                    .font(.system(size: 45, weight: .medium))
-                                
-                                Text("Celsius")
-
-                            } //: VSTACK
-                        } //:SECTION
+                } //:SECTION
+                
+                Spacer()
+                
+                Section {
+                    VStack(alignment: .center) {
+                        Text("\(kelvin, specifier: "%.1f")˚")
+                            .font(.system(size: 45, weight: .medium))
                         
-                        Spacer()
+                        Text("Kelvin")
                         
-                        Section {
-                            VStack(alignment: .center) {
-                                Text("\(viewModel.result.kelvin, specifier: "%.0f")˚")
-                                    .font(.system(size: 45, weight: .medium))
-                                
-                                Text("Kelvin")
-                                
-                            } //: VSTACK
-                        } //:SECTION
-                        Spacer()
-                    } //: HSTACK
-                    Spacer()
-                    
-                } //: VSTACK
-            } //: ZSTACK
-            .background(
-                Image((imageBackground != nil) ? imageBackground?.name as! String : "image-5")
-                        .ignoresSafeArea(.all, edges: .all)
-                        .colorMultiply(.gray)
-                        
-            )
-        } //: NavigationView
+                    } //: VSTACK
+                } //:SECTION
+                Spacer()
+            } //: HSTACK
+            Spacer()
+            
+            
+        } //: ZSTACK
+        .background(
+            Image(imageBackground)
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+        )
         .foregroundColor(Color.white)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }
